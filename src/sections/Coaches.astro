@@ -1,0 +1,77 @@
+---
+import coach1 from "../assets/mentor-1.jpg";
+import coach2 from "../assets/mentor-2.jpg";
+import coach3 from "../assets/mentor-3.jpg";
+import Coach from "../components/Coach.astro";
+---
+<section class="coaches">
+    <h2 class="coaches__title">Having Your Own Coach <br>And Mentor</h2>
+    <div class="coaches__grid">
+        <Coach
+            image={coach1}
+            nombre="DAVID WILLIAMS"
+            tipo="Body Builder Coach"
+        />
+        <Coach
+            image={coach2}
+            nombre="ROSY RIVERA"
+            tipo="Cardio Coach"
+        />
+        <Coach
+            image={coach3}
+            nombre="MATT STONIE"
+            tipo="Fitness Coach"
+        />
+    </div>
+</section>
+<style>
+    .coaches{
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: 4rem 2rem;
+    }
+    .coaches__title{
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--text-dark);
+    }
+    .coaches__grid{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 2rem;
+        margin-top: 3rem;
+        justify-content: space-between;
+    }
+    @media (max-width:768px ){
+        .coaches__grid{
+            grid-template-columns: repeat(2,1fr);
+            gap: 3rem;
+        }
+        
+    }
+    @media (max-width:540px ){
+        .coaches__grid{
+            display: flex;
+            flex-direction: column;
+        }
+        .coaches__title{
+            text-align: center;
+        }
+    }
+</style>
+
+<script>
+ import ScrollReveal from 'scrollreveal';
+const scrollRevealOption = {
+  origin: "bottom",
+  distance: "50px",
+  duration: 1000,
+};
+
+ScrollReveal().reveal('.coaches__grid', {
+  ...scrollRevealOption,
+  origin: "bottom",
+});
+
+</script>
+

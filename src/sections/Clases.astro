@@ -1,0 +1,73 @@
+---
+import ClasesCard from "../components/ClasesCard.astro"
+---
+<section class="clases">
+    <h2 class="clases__title">What Do You Want To <br> Join Today?</h2>
+    <div class="clases__grid">
+        <ClasesCard
+            title="Cardio Strength"
+            descripcion="Full-body workout with cardio"
+        />
+        <ClasesCard
+            title="Weight Training"
+            descripcion="Build muscle strength"
+        />
+        <ClasesCard
+            title="Yoga for Flexibility"
+            descripcion="Improve flexibility and relax"
+        />
+        <ClasesCard
+            title="HIIT"
+            descripcion="Short bursts of intense exercise"
+        />
+        <ClasesCard
+            title="Personal Training"
+            descripcion="Customized workout plans"
+        />
+        <ClasesCard
+            title="Group Fitness Classes"
+            descripcion="Stay motivated and have fun"
+        />
+        <ClasesCard
+            title="Boxing Training"
+            descripcion="Enhance agility and stamina"
+        />
+        <ClasesCard
+            title="Pilates Core Workout"
+            descripcion="Strengthen your core"
+        />
+        <ClasesCard
+            title="Spin Class"
+            descripcion="High-energy cycling sessions"
+        />
+    </div>
+</section>
+<style>
+    .clases{
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: 3rem 2rem;
+    }
+    .clases__title{
+        font-size: 2rem;
+        font-weight:700;
+        color: var(--text-dark);
+        padding-bottom: 3.5rem;
+    }
+    .clases__grid{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 1rem;
+    }
+    @media (max-width:768px ){
+        .clases__grid{
+            grid-template-columns: repeat(2,1fr);
+        }
+    }
+    @media (max-width:540px ){
+        .clases__grid{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+</style>

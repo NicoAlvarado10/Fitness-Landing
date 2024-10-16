@@ -1,0 +1,33 @@
+---
+import { Image } from 'astro:assets';
+
+const {image, nombre, tipo} = Astro.props
+---
+<article class="coach__card">
+    <Image src={image} class={"coach__img"} alt={"coach"}/>
+    <h3 class="coach__nombre">{nombre}</h3>
+    <p class="coach__tipo">{tipo}</p>
+</article>
+
+<style>
+    .coach__img{
+        border-radius: 3rem;
+        width: 100%;
+        height: 90%;
+    }
+    .coach__nombre{
+        font-size: 1.3rem;
+        color: var(--text-dark);
+        font-weight: 700;
+        text-align: center;
+        margin-top: 0.8rem;
+    }
+    .coach__tipo{
+        color: var(--text-light);
+        font-size: 1.1rem;
+        margin-top: 0.5rem;
+        font-weight: 600;
+        text-align: center;
+    }
+   
+</style>

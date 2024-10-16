@@ -1,0 +1,174 @@
+---
+import {Image} from "astro:assets";
+import ServicesImg from "../assets/service.png"
+import ServicesCard from "../components/ServicesCard.astro";
+
+
+---
+<section class="servicios">
+    <h2 class="servicios__title">Services We Provide</h2>
+    
+<div class="servicios__grid">
+    <div class="div1">
+        <ServicesCard
+            number={"01"}
+            title={"Fitness Training"}
+            description={"Our fitness training programs are tailored to help you build strength, improve endurance, and achieve your personal fitness goals."}
+        />
+    </div>
+
+    <div class="div2">
+        <ServicesCard
+            number="02"
+            title="Yoga"
+            description="Perfect for all levels, our sessions focus on improving flexibility, balance, and mental clarity while helping you manage stress."
+        />
+    </div>
+
+    <div class="div3">
+        <ServicesCard
+            number="03"
+            title="Gymnastics"
+            description="Our gymnastics classes are designed to boost coordination, flexibility, and core strength through a series of fun and challenging exercises."
+        />
+    </div>
+
+    <div class="div4">
+        <ServicesCard
+            number="04"
+            title="Karate"
+            description="Suitable for all ages and skill levels, our martial arts program emphasizes technique, respect, and personal growth while building confidence."
+        />
+    </div>
+    
+    <div class="servicios__img div5">
+        <Image src={ServicesImg} class={"services-img"} alt={"services-image"}/>
+    </div>
+
+</div>
+    
+
+</section>
+
+<style>
+    .servicios{
+    padding: 0rem 2rem;
+    background-color: var(--text-dark);
+}
+.servicios__title{
+    font-size: 2.5rem;
+    color: var(--white);
+    font-weight: 700;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding-top: 3rem;
+}
+.servicios__grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding-top: 3.5rem;
+}
+    
+
+.div2 {
+    grid-column-start: 3;
+    grid-row-start: 1;
+}
+
+.div3 {
+    grid-column-start: 1;
+    grid-row-start: 2;
+}
+
+.div4 {
+    grid-column-start: 3;
+    grid-row-start: 2;
+}
+
+.div5 {
+    grid-row: span 2 / span 2;
+    grid-column-start: 2;
+    grid-row-start: 1;
+}
+        
+.services-img{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    margin: 0 auto;
+}
+
+@media (max-width:768px ){
+    .div5{
+        display: none;
+    }
+    .servicios{
+    padding-bottom: 3.5rem;
+    }
+    .servicios__grid{
+        grid-template-columns: repeat(2,1fr);
+        gap: 2rem;
+        padding-top: 2.5rem;
+    }
+    .div2 {
+    grid-column-start:2;
+    grid-row-start:1;
+}
+
+.div3 {
+    grid-column-start:1;
+    grid-row-start:2;
+}
+
+.div4 {
+    grid-column-start:2;
+    grid-row-start:0;
+}
+@media (max-width:540px ){
+    .servicios__grid{
+        display: flex;
+        flex-direction: column;
+    }
+    .servicios{
+        padding-left: 2rem;
+    }
+}
+
+}
+</style>
+
+<script>
+        import ScrollReveal from 'scrollreveal';
+    const scrollRevealOption = {
+  origin: "bottom",
+  distance: "50px",
+  duration: 1000,
+};
+
+ScrollReveal().reveal(".div1", {
+  ...scrollRevealOption,
+  origin: "bottom",
+});
+
+ScrollReveal().reveal(".div2", {
+  ...scrollRevealOption,
+  origin: "bottom",
+  delay:500
+});
+ScrollReveal().reveal(".div3", {
+  ...scrollRevealOption,
+  origin: "bottom",
+  delay:1000
+});
+ScrollReveal().reveal(".div4", {
+  ...scrollRevealOption,
+  origin: "bottom",
+  delay:1500
+});
+
+
+
+</script>

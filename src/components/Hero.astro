@@ -1,0 +1,134 @@
+---
+
+import { Image } from 'astro:assets';
+import heroImg from "../assets/header.png";
+---
+<section class="hero">
+    <div class="hero__texts">
+        <h1 class="hero__title">DON'T STOP TILL YOUR SUCCESS!</h1>
+        <h2 class="hero__subtitle">GET FIT TO HAPPY</h2>
+        <p class="hero__paragraph">Unlock your full potential with our expert training and state-of-the-art facilities. Every step you take brings you closer to a healthier, happier you. Let's make fitness a lifestyle!</p>
+        <a class="hero__btn" href="#">Explore More</a>
+    </div>
+    <div class="hero__img">
+        <Image src={heroImg} class="hero-img" alt="hero-img"/>
+    </div>
+</section>
+
+<style>
+    .hero{
+        display: flex;
+        justify-content: center;
+        gap: 10rem;
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding-top: 4rem;
+    }
+    .hero__texts{
+        padding-top: 3rem;
+    }
+    .hero__img{
+        border-radius: 5rem;
+        padding-left: 5rem;
+        padding-top: 2rem;
+        width: 75%;
+        background: var(--gradient-2);
+    }
+    .hero-img{
+        width: 70%;
+        height: 95%;
+    }
+    .hero__title{
+        font-size: 3.5rem;
+        color: var(--secondary-color);
+        font-weight: 900;
+        font-style: italic;
+    }
+    .hero__subtitle{
+        font-size: 3rem;
+        font-weight: 900;
+        color: var(--text-dark);
+        font-style: italic;
+    }
+    .hero__paragraph{
+        padding: 1.5rem 0;
+        font-size: 1.1rem;
+        line-height: 1.5;
+        color: var(--text-light);
+    }
+    .hero__btn{
+        padding: 0.8rem 1.5rem;
+        border-radius: 5px;
+        background-color: var(--text-dark);
+        color: var(--white);
+        cursor: pointer;
+        font-size: 1rem;
+        
+    }
+    @media (max-width:768px ){
+        .hero{
+        flex-direction: column;
+        padding-top: 2rem;
+        gap: 5rem;
+    }
+    .hero__texts{
+        padding-top: 3rem;
+        text-align: center;
+    }
+    .hero__img{
+        border-radius: 5rem;
+        padding-left: 0;
+        padding-top: 0;
+        width: 100%;
+        background:none;
+        text-align: center;
+    }
+    .hero-img{
+        width:40%;
+        height: 50%;
+        
+    }
+    @media (max-width:540px ){
+        .hero__paragraph{
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+    };
+    }
+</style>
+
+<script>
+    import ScrollReveal from 'scrollreveal';
+    const scrollRevealOption = {
+  origin: "bottom",
+  distance: "50px",
+  duration: 1000,
+};
+
+ScrollReveal().reveal(".hero__img img", {
+  ...scrollRevealOption,
+  origin: "right",
+});
+
+ScrollReveal().reveal(".hero__title", {
+  ...scrollRevealOption,
+  origin: "bottom",
+});
+
+ScrollReveal().reveal(".hero__subtitle", {
+  ...scrollRevealOption,
+  origin: "bottom",
+  delay:500,
+});
+
+ScrollReveal().reveal(".hero__paragraph", {
+  ...scrollRevealOption,
+  origin: "bottom",
+  delay:1000,
+});
+ScrollReveal().reveal(".hero__btn", {
+  ...scrollRevealOption,
+  origin: "bottom",
+  delay:1500,
+});
+</script>

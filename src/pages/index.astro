@@ -1,0 +1,63 @@
+---
+
+import 'remixicon/fonts/remixicon.css';	
+import About from "../sections/About.astro"
+import Header from "../sections/Header.astro"
+import Servicios from "../sections/Servicios.astro"
+import Clases from "../sections/Clases.astro"
+import Training from "../sections/Training.astro"
+import Coaches from "../sections/Coaches.astro"
+import Banner from "../sections/Banner.astro"
+import Footer from "../sections/Footer.astro"
+---
+
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>FitnessPoint-Landing</title>
+	</head>
+	<body>
+		<Header/>
+		<About/>
+		<Servicios/>
+		<Clases/>
+		<Training/>
+		<Coaches/>
+		<Banner/>
+		<Footer/>
+	</body>
+</html>
+
+<style is:global>
+
+	* {
+		padding: 0;
+		margin: 0;
+		box-sizing: border-box;
+		text-decoration: none;
+		list-style: none;
+		border: none;
+}
+
+:root {
+	--primary-color: #42c8c9;
+	--secondary-color: #d6abd8;
+	--text-dark: #020617;
+  --text-light: #94a3b8;
+  --extra-light: #e2e8f0;
+  --white: #ffffff;
+  --gradient-1: linear-gradient(to right, #eeb5c6, #b2b4e4, #b3b4e4);
+  --gradient-2: linear-gradient(to right, #eeb5c4, #beb0e1, #7ed6d8);
+  --max-width: 1200px;
+}
+body {
+font-family: 'Poppins', sans-serif;
+}
+html, body{
+	scroll-behavior: smooth;
+}
+
+</style>

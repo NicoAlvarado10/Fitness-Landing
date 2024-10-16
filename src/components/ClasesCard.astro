@@ -1,0 +1,45 @@
+---
+const {title, descripcion} = Astro.props
+import ArrowRight from "../icons/ArrowRight.astro"
+---
+<article class="card__content">
+    <div>
+        <h3>{title}</h3>
+        <p>{descripcion}</p>
+    </div>
+            <ArrowRight/>
+      
+
+</article>
+
+<style>
+    
+    .card__content{
+        padding: 1.5rem;
+        border: 1px solid var(--extra-light);
+        box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.05);
+        transition: 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .card__content:hover{
+        box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+    }
+
+
+.card__content h3{
+    color: var(--text-dark);
+    font-weight: 700;
+        font-size: 1.3rem;
+        margin-bottom: 0.8rem;
+    }
+    .card__content p{
+        color: var(--text-light);
+        font-size: 1.1rem;
+    }
+    .card__icon i{
+        color: var(--primary-color);
+        font-size: 2rem;
+    }
+</style>

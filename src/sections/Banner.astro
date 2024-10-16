@@ -1,0 +1,71 @@
+---
+import { Image } from 'astro:assets';
+import bannerImg from "../assets/banner.png";
+---
+<section class="banner">
+    <div class="banner__text">
+        <h2 class="banner__title">THE BEST <br> TRAINERS <br> OUT THERE
+        </h2>
+        <p class="banner__paragraph">ARE YOU A TRAINER? <span>JOIN US</span></p>
+    </div>
+
+        <Image src={bannerImg} class={"banner-img"} alt="banner"/>
+ 
+</section>
+
+<style>
+    .banner{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        
+        
+    }
+    .banner__title{
+        font-size: 5rem;
+        color: var(--white);
+        padding-left: 5rem;
+    }
+    .banner__paragraph{
+        color: var(--white);
+        padding-left: 5rem;
+        font-size: 1.3rem;
+        margin-top: 1rem;
+    }
+    .banner__paragraph span{
+        text-decoration: underline;
+    }
+    .banner-img{
+        width: 100%;
+        height: 100%;
+        clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
+    }
+    .banner__text{
+        background-image: var(--gradient-1);
+        width: 110%;
+        flex-basis: 50%;
+        padding: 6.5rem 0;
+        clip-path: polygon(0% 0, 100% 0, 100% 100%, 0 100%);
+
+    }
+    @media (max-width:768px ){
+        .banner{
+        display: flex;
+        flex-direction: column;
+    }
+    .banner__text{
+        clip-path: none;
+        width: 100%;
+        padding: 4rem 0;
+    }
+    .banner-img{
+        clip-path:none;
+    }
+    .banner__title{
+        padding-left: 1.5rem;
+    }
+    .banner__paragraph{
+
+        padding-left: 1.5rem;
+    }
+    }
+</style>
